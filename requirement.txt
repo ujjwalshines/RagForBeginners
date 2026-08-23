@@ -6,3 +6,4 @@ langchain-chroma
 chromadb
 langchain-openai
 httpx2
+python-dotenv

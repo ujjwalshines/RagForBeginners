@@ -44,13 +44,13 @@ embeddings/vector_store/       Persisted Chroma database
   - `chromadb`
   - `langchain-openai` for OpenAI embeddings
   - `httpx2` for the current OpenAI embedding implementation
-
+ 
 Create and activate a virtual environment, then install the dependencies using your preferred package-management workflow. For the default spaCy example, also install the model:
 
 ```powershell
-python -m venv .env
-.\.env\Scripts\Activate.ps1
-python -m pip install spacy langchain-community langchain-text-splitters langchain-chroma chromadb langchain-openai httpx2
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+python -m pip install spacy langchain-community langchain-text-splitters langchain-chroma chromadb langchain-openai httpx2 python-dotenv
 python -m spacy download en_core_web_md
 ```
 

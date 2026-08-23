@@ -1,3 +1,5 @@
+import os
+
 from chromadb import Documents
 from langchain_chroma import Chroma
 
@@ -25,7 +27,7 @@ class VectorHelper:
      vector_store = Chroma.from_documents(
         documents=chunks,
         embedding=embeddings,
-        persist_directory=persist_directory_path or 'embeddings/vector_store',
+        persist_directory=persist_directory_path or os.getenv("VECTOR_DB_PATH"),
         collection_metadata={"hnsw:space": "cosine"}
     
         )
