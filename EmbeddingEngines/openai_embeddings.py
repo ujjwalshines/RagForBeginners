@@ -11,7 +11,7 @@ class OpenAIEmbeddingsInfo(OpenAIEmbeddings):
         super().__init__(model_name=model_name)
     def embed_documents(self, documents: list[str]) -> list[list[float]]:
         # Use the OpenAI API to get embeddings for the documents
-        openai_api_key = os.getenv("OPENAI_API_KEY") or "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"
+        openai_api_key = os.getenv("OPENAI_API_KEY") or 'your_api_key_here'
         response = query(
             url="https://api.openai.com/v1/embeddings",
             method="POST",
@@ -23,7 +23,7 @@ class OpenAIEmbeddingsInfo(OpenAIEmbeddings):
 
     def embed_query(self, query: str) -> list[float]:
         # Use the OpenAI API to get an embedding for the query
-        openai_api_key = os.getenv("OPENAI_API_KEY") or "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"
+        openai_api_key = os.getenv("OPENAI_API_KEY") or 'your_api_key_here'
         response = query(
             url="https://api.openai.com/v1/embeddings",
             method="POST",
