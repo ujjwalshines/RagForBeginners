@@ -1,0 +1,8 @@
+spacy
+langchain-core
+langchain-community
+langchain-text-splitters
+langchain-chroma
+chromadb
+langchain-openai
+httpx2
