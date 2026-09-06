@@ -38,7 +38,7 @@ class EmbeddingHelpers:
         print(f"\nquery: {query}")
         for i, doc in enumerate(docs):
              # print(f"\nresult {i + 1}:")
-             docs_with_similarity.append(doc.page_content)
+             docs_with_similarity.append(f"Context {i + 1}: {doc.page_content}")
              # print(f"content: {doc.page_content}")
              #print(f"metadata: {doc.metadata}")
         return docs_with_similarity

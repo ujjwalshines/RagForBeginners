@@ -28,13 +28,13 @@ class RagService:
         llmCriteria=LLMCriteria(
                     LLMInteractionType=InteractionLLMTypes.GOOGLE_GEN_AI,
                     model=_model,
-                    model_name=_model["GEMINI_FLASH_3_8"],
+                    model_name="GEMINI_FLASH_3_8",
                     retrieved_context=retrieved_context,
                     user_query=criteria.query_text
                 )
-        print(f" sending data to LLM for response gen: {LLMCriteria}")
+        # print(f" sending data to LLM for response gen: {LLMCriteria}")
         _response=LlmInteractionHelpers.get_llm_response(llm=LlmInteractionHelpers.create_llm_context, LLMCriteria=llmCriteria)
-        print(f" =====================================================================")
-        print(f"response: {_response}")
+        #print(f" =====================================================================")
+        # print(f"response: {_response}")
         return _response
        
