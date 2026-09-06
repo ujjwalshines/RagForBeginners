@@ -33,7 +33,7 @@ class LlmInteractionHelpers:
                          \n\n{joined_context}
                          \n\nQuestion: {LLMCriteria.user_query}
                         """
-        print(f"combined input: {_combined_input}")
+       
         match LLMCriteria.LLMInteractionType:
             case InteractionLLMTypes.GOOGLE_GEN_AI:
                 # Create context for Google Generative AI
