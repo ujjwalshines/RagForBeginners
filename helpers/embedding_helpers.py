@@ -33,10 +33,12 @@ class EmbeddingHelpers:
     def search_info(embedding_type: EmbeddingTypes, query:str, model_name:str=os.getenv("SPACY_MODEL_NAME_EN_CORE_WEB_MD")):
         embedding_function = EmbeddingHelpers.get_embeddings(embedding_type, model_name)
         docs = VectorHelper.retrieve_vectors(query, embedding_function, os.getenv("VECTOR_DB_PATH"), k=5)
-
+        docs_with_similarity = []
         print(f"==============================================================")
-        print(f"\nQuery: {query}")
+        print(f"\nquery: {query}")
         for i, doc in enumerate(docs):
-            print(f"\nResult {i + 1}:")
-            print(f"Content: {doc.page_content}")
-            print(f"Metadata: {doc.metadata}")
+             # print(f"\nresult {i + 1}:")
+             docs_with_similarity.append(doc.page_content)
+             # print(f"content: {doc.page_content}")
+             #print(f"metadata: {doc.metadata}")
+        return docs_with_similarity
