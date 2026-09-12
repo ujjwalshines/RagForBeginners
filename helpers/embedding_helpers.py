@@ -24,9 +24,12 @@ class EmbeddingHelpers:
     @staticmethod
     def create_embeddings(embedding_type: EmbeddingTypes, docs:str, model_name:str):
         # Load the medium English model containing 300-dim vectors
+        print(f"chunking process started...")
         embedding_function = EmbeddingHelpers.get_embeddings(embedding_type,model_name)
         documents = RagUtility.load_documents_from_directory(docs)
-        chunks=ChunkingHelper.chunk_splitter(documents, chunk_size=1000, chunk_overlap=20)
+        chunks=ChunkingHelper.character_chunk_splitter(documents, chunk_size=1000, chunk_overlap=20)
+        # chunks=ChunkingHelper.semantic_chunk_splitter(documents, buffer_size=1000)
+        print(f"Total Chunks created: {len(chunks)}")
         VectorHelper.store_vectors(chunks,embedding_function, persist_directory_path=os.getenv("VECTOR_DB_PATH"))
 
     @staticmethod

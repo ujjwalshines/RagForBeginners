@@ -11,6 +11,8 @@ models={
         "GEMINI_FLASH_3_8B":"models/gemini-flash-3b",
         "GEMINI_1_5B":"models/gemini-1.5b",
         "GEMINI_FLASH_3_8":"models/gemini-3.8-flash",
+        "TEXT_EMBEDDING_004":"models/text-embedding-004",
+        "GEMINI_EMBEDDING_001":"gemini-embedding-001",
         "CONFIG" : {'max_output_tokens': 65536,'thinking_level': 'medium',}
 
     },

@@ -18,6 +18,7 @@ def get_query_response(rag_flow: RagFlows, criteria: Criteria):
                  __result=f"Unsupported embedding type: {criteria.embedding_type}"
       except Exception as e:
           print(f"Error while processing the query:{e}") 
+          raise e
       return __result
 
 

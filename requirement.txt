@@ -10,3 +10,4 @@ httpx2
 python-dotenv
 google-genai
 langchain-google-genai
+langchain-experimental

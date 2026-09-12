@@ -2,7 +2,8 @@
 __pycache__/
 *.py[codz]
 *$py.class
-
+.vscode/
+.vscode/launch.json
 # C extensions
 *.so
 
@@ -221,3 +222,4 @@ __marimo__/
 embeddings/
 venv/
 docs/*.txt
+.vscode/launch.json
