@@ -17,6 +17,6 @@ dependencies:
       -python-dotenv
       -google-genai
       -langchain-google-genai
-      - spacy
+      -spacy
       # This tells conda/pip to fetch the spacy model directly from github as a package
-      - https://github.com
+      -https://github.com
