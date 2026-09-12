@@ -1,6 +1,7 @@
 import os
 
 from models.embedding_type import EmbeddingTypes
+from models.llm_type import InteractionLLMTypes
 
 
 class Criteria:
@@ -10,3 +11,10 @@ class Criteria:
         self.doc_path = doc_path or 'docs'
         self.model_name = model_name or os.getenv("SPACY_MODEL_NAME_EN_CORE_WEB_MD") or 'en_core_web_md'
         self.skip_embeddings = skip_embeddings or True
+class LLMCriteria:
+    def __init__(self,LLMInteractionType:InteractionLLMTypes,model,model_name:str,retrieved_context,user_query:str):
+        self.LLMInteractionType=LLMInteractionType
+        self.model=model
+        self.model_name=model_name
+        self.retrieved_context=retrieved_context
+        self.user_query=user_query
