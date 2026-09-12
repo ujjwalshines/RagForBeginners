@@ -1,0 +1,22 @@
+name: rag-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10.7
+  - pip
+  - pip:
+      -langchain
+      -langchain-core
+      -langchain-community
+      -langchain-text-splitters
+      -langchain-chroma
+      -chromadb
+      -langchain-openai
+      -httpx2
+      -python-dotenv
+      -google-genai
+      -langchain-google-genai
+      - spacy
+      # This tells conda/pip to fetch the spacy model directly from github as a package
+      - https://github.com
