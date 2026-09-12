@@ -34,8 +34,8 @@ class EmbeddingHelpers:
         embedding_function = EmbeddingHelpers.get_embeddings(embedding_type, model_name)
         docs = VectorHelper.retrieve_vectors(query, embedding_function, os.getenv("VECTOR_DB_PATH"), k=5)
         docs_with_similarity = []
-        print(f"==============================================================")
-        print(f"\nquery: {query}")
+        
+        # print(f"\nquery: {query}")
         for i, doc in enumerate(docs):
              # print(f"\nresult {i + 1}:")
              docs_with_similarity.append(f"Context {i + 1}: {doc.page_content}")

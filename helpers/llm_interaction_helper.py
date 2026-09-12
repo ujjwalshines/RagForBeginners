@@ -51,7 +51,7 @@ class LlmInteractionHelpers:
                        # contents=combined_input,
                        # generation_config=LLMCriteria.model["CONFIG"],
                  )
-                print(f"response: {_response.text}")
+                # print(f"response: {_response.text}")
                 return _response.text
                 pass
             case InteractionLLMTypes.OPEN_AI:
