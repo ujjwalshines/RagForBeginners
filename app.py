@@ -28,19 +28,22 @@ if __name__ == "__main__":
 
     print(f"Plese enter your flow, type: \n1. CREATE_AND_SAVE, \n2. SEARCH_INFO")
     flow = input("Enter your flow: ")
-    if flow not in ["CREATE_AND_SAVE", "SEARCH_INFO"]:
+    if flow not in ["1", "2"]:
         print(f"Invalid flow type. Please enter one of the following: OVERALL, CREATE_AND_SAVE, SEARCH_INFO")
         exit(1)
     while True:
         match flow:
-            case "CREATE_AND_SAVE":
+            case "1":
                 print(f"Creating and saving embeddings...")
                 get_query_response(rag_flow=RagFlows.CREATE_AND_SAVE, criteria=Criteria(embedding_type=EmbeddingTypes.SPACY, doc_path="docs", model_name=os.getenv(constants["SPACY_MODEL_NAME_TOKEN"]), skip_embeddings=False))
-            case "SEARCH_INFO":
+            case "2":
                 query = input("Enter your query: ")
                 response = agent.invoke({"messages": [("user", query)]})
                 print(f"\n\nAnswer:")
                 print(response["messages"][-1].content[0]["text"])
+        if flow=="1":
+            print(f"Embeddings created and saved successfully.")
+            break
         user_input = input("Do you wish to Continue? (type 'exit' to quit): ")
         print(f"==============================================================")
         if user_input.lower() == "exit":
