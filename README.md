@@ -12,7 +12,7 @@ The project currently performs retrieval only. It prints the matching chunks and
 
 ## How It Works
 
-1. `RagUtility` loads all `.txt` files from the configured document directory.
+1. `RagUtility` loads all `.txt` or `.md` files from the configured document directory.
 2. `ChunkingHelper` splits each document into chunks of up to 1,000 characters with 20 characters of overlap.
 3. An embedding engine converts the chunks into vectors.
 4. `VectorHelper` persists the vectors in `embeddings/vector_store` using Chroma with cosine similarity.
